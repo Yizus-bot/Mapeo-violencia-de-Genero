@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Open Street Map</title>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.9.3/dist/leaflet.css"
+        integrity="sha256-kLaT2GOSpHechhsozzB+flnD+zUyjE2LlfWPgU04xyI=" crossorigin="" />
+    <script src="https://unpkg.com/leaflet@1.9.3/dist/leaflet.js"
+        integrity="sha256-WBkoXOwTeyKclOHuWtc+i2uENFpDZ9YPdf5Hf+D7ewM=" crossorigin=""></script>
+</head>
+
+<body>
+    <div id="mi_mapa" style="width: 100%; height: 500px;"></div>
+
+    <script>
+        let map = L.map('mi_mapa').setView([5.05850, -75.50474], 13)
+
+        var iconoPersonalizado = L.icon({
+        iconUrl: 'https://img.icons8.com/?size=100&id=53651&format=png&color=000000',  // Ruta a tu imagen
+        iconSize: [38, 38],             // Tamaño del icono en píxeles
+        iconAnchor: [22, 38],           // Punto del icono que corresponde a la ubicación del marcador
+        popupAnchor: [-3, -38]          // Punto desde donde sale el popup relativo al icono
+    });
+
+        L.tileLayer('https://tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+        }).addTo(map);
+
+        L.marker([5.083572, -75.526317], {icon: iconoPersonalizado})
+            .addTo(map)
+            .bindPopup("Juan, Clinica Avidanti: La vulneración de mi atención en salud es una de las cosas en las que más me he quejado pero un día en esta clínica me acerque a una cita que había pedido hace días, cuando llegue, la doctora me atendió de manera despectiva por pertenecer a una comunidad LGBTQ")
+        L.marker([5.083000, -75.525963], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Katalina, Clinica Avidanti: Un paciente llega a consulta, cuando estábamos en consulta hacía comentarios inapropiados hacia mi, diciéndome: 'tenía que ser mujer' por no darle como respuesta lo que él esperaba, luego empezaba a acercarse mucho a mi e intentó tocarme, mi reacción fue salir del consultorio y buscar ayuda.")
+        L.marker([5.062797, -75.497811], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("María, Salud Total: En mi caso, como auxiliar de enfermería, me he visto expuesta a comentarios como, no es que usted es solo una auxiliar y no tiene la misma capacidad que un hombre, por favor llámeme a un enfermero")
+        L.marker([5.062804, -75.497891], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Anonimo, Salud Total: En mi caso, como profesional de enfermería, me he visto expuesto a situaciones tanto con pacientes como con colegios, por ejemplo, en una ocasión un médico se dirigió hacia mi diciendo que falta de iniciativa y competencia por no solo llamar, si no por no ir a buscar entre los pisos al personal de servicios generales para que le aseen la oficina.")
+        L.marker([5.035527, -75.468441], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Cristina, Clinica San Marcel: Al momento de estar en la sala de espera el vigilante hizo comentarios en los que afirmaba que las mujeres solo debían estar en la cocina y ser amas de casa.")
+        L.marker([5.062902, -75.500128], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Luisa, Hospital de Caldas: Al ser auxiliar de enfermería, tengo contacto muy directo con los pacientes, recuerdo una vez un señor un poco ya de edad, empieza a tocarme mis piernas, al principio pensé que fue por accidente, después me tocó mis nalgas, ahí me fue cuando me di cuenta que tenía otras intenciones, le dije que por favor lo dejara de hacer y si no lo hacía tenía que tomar otras medidas, a este comentario reacciono dicho que ni se me ocurre, que calladita me veía más bonita, además que el podría negarlo y que yo podría quedar como una mentirosa.")
+        L.marker([5.083000, -75.525963], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Anonimo, Clinica Ospedale: Soy transexual, visto de manera extrovertida se puede decir, pero eso no le da derecho a que me miren o me toquen, me da miedo asistir al médico por el hecho de las miradas que juzgan en silencio, personas que me han hecho sentir que por 'ser como soy' no merito una atención, que 'no debí nacer' porque 'soy una abominación'  cosas que aún las sigo tratando de superar y que duelen porque no es justo. ")
+        L.marker([5.035672, -75.468811], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Felipe, Clinica San Marcel: Soy auxiliar de enfermería me gusta mucho mi profesión, pero me he sentido mal por el hecho de ser hombre y trabajar en algo que ha sido tan feminizado, muchas veces me he sentido mal por se hombre y ver cómo la gente me hace menos y prefiere que una compañera los atienda, desmeritando mi esfuerzo.")
+        L.marker([5.031491, -75.467234], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Anonimo, Assbasalud: Fui agredida al decirle a un paciente que incluso no era su turno, que debía esperar y tener paciencia, ya que habían más personas de por medio siendo atendidas y esperando su turno, además le dije que era imposible asistirlo de forma rápida como El quería, esto no le gusto y reacciona de esta manera: insultándome y empujándome.")
+        L.marker([5.057260, -75.483209], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Luis, Nueva EPS: Soy médico general y enfrento la presión constante de mis colegas de ser “duro” y “no mostrar emociones” en situaciones de alta tensión, en lugar de permitirme expresar mis preocupaciones y mi sentir, estos comentarios son sustentados supuestamente porque por ser hombre debo ser duro y frío")
+        L.marker([5.062534, -75.500466], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Katherine, Hospital de Caldas: Recuerdo que iniciando mis practicas, llené mal una historia clínica, un doctor, ya mayor, al ver esto, me grita y me lanza un comentario en el que me decía que mejor me dedicará a hacerle tintos, porque para eso no servía.")
+        L.marker([5.062598, -75.500901], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Ruben, Hospital de Caldas: Soy médico general y enfrento la presión constante de mis colegas de ser “duro” y “no mostrar emociones” en situaciones de alta tensión, en lugar de permitirme expresar mis preocupaciones y mi sentir, estos comentarios son sustentados supuestamente porque por ser hombre debo ser duro y frío")
+        L.marker([5.065794, -75.501856], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Erika, Clinica de la Presentación: En mi caso, como profesional de enfermería, me he visto expuesto a situaciones tanto con pacientes como con colegios, por ejemplo, en una ocasión un médico se dirigió hacia mi diciendo que falta de iniciativa y competencia por no solo llamar, si no por no ir a buscar entre los pisos al personal de servicios generales para que le aseen la oficina.")
+        L.marker([5.063889, -75.498578], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Brian, Hospitalito: De muchos recuerdos, el que más me marcó fue un día en que le estábamos realizando un procedimiento médico a un paciente, de los nervios, no había logrado hacerlo, el doctor con el que tenia ese turno ese día se enojo, y no solo le basto con gritarme frente al paciente y las personas presentes, si no que me tiro el equipo que en ese momento estaba lleno de líquidos corporales en todo mi uniforme, al ver esto se me aguaron los ojos y de inmediato me dice que no llore qué eso es de maricas")
+        L.marker([5.065820, -75.501893], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Lucia, Clinica de la Presentación: Al haberme graduado hace poco, un paciente de la tercera edad me discriminó al momento de atenderlo, decía que yo no tenía experiencia y que por ende lo iba a dejar morir.")
+        L.marker([5.036159, -75.469218], {icon: iconoPersonalizado})
+        .addTo(map)
+        .bindPopup("Sofia, Oncologos de Occidente: Me encontraba realizando las labores matutinas de aseo cuando un paciente que estaba interno me acosó, me dijo 'Que rico se le ve ese uniforme pegadito' seguido de esto se empezó a reir y a a acercarse a mi, salí corriendo por el miedo y asco que me generó")
+
+
+
+        map.on('click', onMapClick)
+
+        function onMapClick(e) {
+            alert("Posición: " + e.latlng)
+        }
+    </script>
+</body>
+
+</html>
